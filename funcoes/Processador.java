@@ -29,8 +29,6 @@ public class Processador {
 
 			int numShorts = (int) (tamanhoArquivo / 2);
 
-			System.out.println("Sla antes do for");
-
 			for (int i = 0; i < numShorts; i++) {
 				int low = dataInputStream.readByte() & 0x000000FF;
 				int high = dataInputStream.readByte() & 0x000000FF;
@@ -38,9 +36,7 @@ public class Processador {
 
 				memory_write((short)i, (short)value);
 			}
-
-			System.out.println("Sla depois do for");
-
+			
 			dataInputStream.close();
 			fileInputStream.close();
 		} catch (IOException e) {
